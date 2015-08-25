@@ -10,14 +10,16 @@ generator-le-page
 ## Usage
 
 ```
-  //TODO
+
+  In order for the page generator to work, your angular project must have a 'client/index.html' and a 'client/src/app/app.js' file. You can optionally add hooks for the generator to include the new files and modules in those two files with the hooks "<!-- YOEMAN HOOK -->" and "/*--YEOMAN-HOOK--*/" respectively.
+
+  To generate a new page, cd into your porject and run 'yo le-page' from the command line. You will be prompted for the name.
+  
 ```
 
 ## Tests
 
-* `npm test` to run unit tests once
-* `gulp tdd` to run unit and e2e tests when tests change
-* `gulp coverage` to run unit tests and create a code coverage report
+* `npm test` to run unit tests
 
 ## Contributing
 
