@@ -3,6 +3,7 @@
   'use strict';
   describe('common.controllers.<%= controllerName %> module', function() {
     var controller;
+    beforeEach(module('ui.router'));
     beforeEach(module('common.controllers.<%= controllerName %>'));
     beforeEach(inject(function($controller) {
       controller = $controller('<%= controllerName %>', {});
