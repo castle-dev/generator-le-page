@@ -34,6 +34,7 @@
     "gulp-clean": "^0.3.1",
     "gulp-jsdoc": "^0.1.4",
     "gulp-util": "^3.0.6",
-    "mocha": "*"
+    "mocha": "*",
+    "run-sequence": "^1.1.4"
   }
 }
