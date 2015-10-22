@@ -1,6 +1,6 @@
 {
   "name": "generator-le-page",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Make all the necessary files and file changes to add a new page to the angular application",
   "license": "MIT",
   "main": "app/index.js",
