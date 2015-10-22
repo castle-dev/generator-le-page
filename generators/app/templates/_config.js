@@ -12,7 +12,8 @@
         views: {
           '@': {
             templateUrl: 'src/common/partials/<%= paramCaseState %>.tpl.html',
-            controller: '<%= controllerName %>'
+            controller: '<%= controllerName %>',
+            controllerAs: 'vm'
           }
         }
       });
