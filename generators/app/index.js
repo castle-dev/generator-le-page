@@ -74,8 +74,6 @@ var CastlePageGenerator = yeoman.generators.Base.extend({
     copyTemplate('_template.tpl.html', 'client/src/common/partials/' + answers.paramCaseState + '.tpl.html');
     copyTemplate('_controller.js', 'client/src/common/controllers/' + answers.paramCaseState + '-state-controller.js');
     copyTemplate('_config.js', 'client/src/common/routes/' + answers.paramCaseState + '.js');
-    copyTemplate('_test/_config.spec.js', 'client/test/unit/common/routes/' + answers.paramCaseState + '.spec.js');
-    copyTemplate('_test/_controller.spec.js', 'client/test/unit/common/controllers/' + answers.paramCaseState + '-state-controller.spec.js');
 
     addToIndex('tmp/common/routes/' + answers.paramCaseState + '.js');
     addToIndex('tmp/common/controllers/' + answers.paramCaseState + '-state-controller.js');
