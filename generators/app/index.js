@@ -71,13 +71,11 @@ var CastlePageGenerator = yeoman.generators.Base.extend({
     answers.paramCaseState = formatter.param(answers.camelCaseState);
     answers.controllerName = formatter.pascal(answers.camelCaseState) + 'StateController';
 
-    copyTemplate('_template.tpl.html', 'client/src/common/partials/' + answers.paramCaseState + '.tpl.html');
+    copyTemplate('_template.tpl.html', 'client/src/common/partials-lazy/' + answers.paramCaseState + '.tpl.html');
     copyTemplate('_controller.js', 'client/src/common/controllers/' + answers.paramCaseState + '-state-controller.js');
     copyTemplate('_config.js', 'client/src/common/routes/' + answers.paramCaseState + '.js');
 
     addToIndex('tmp/common/routes/' + answers.paramCaseState + '.js');
-    addToIndex('tmp/common/controllers/' + answers.paramCaseState + '-state-controller.js');
-    addToAppModules('common.controllers.' + answers.controllerName);
     addToAppModules('common.routes.' + answers.camelCaseState);
   },
 });

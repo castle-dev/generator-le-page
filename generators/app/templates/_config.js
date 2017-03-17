@@ -1,24 +1,37 @@
 (function() {
   'use strict';
 
+  var stateName = '<%= camelCaseState %>';
+
   /**
    * @name  config
    * @description config block
    */
-  function config($stateProvider) {
+  function config($stateProvider, lazyLoadServiceProvider) {
     $stateProvider
-      .state('<%= camelCaseState %>', {
+      .state(stateName, {
         url: '<%= url %>',
         views: {
           '@': {
-            templateUrl: 'src/common/partials/<%= paramCaseState %>.tpl.html',
+            templateUrl: lazyLoadServiceProvider.getStateTemplateFileName(stateName),
             controller: '<%= controllerName %>',
             controllerAs: 'vm'
+          }
+        },
+        resolve: {
+          session: function (sessionService) {
+            return sessionService.waitForLoggedInSession();
+          },
+          load: function (lazyLoadService) {
+            return lazyLoadService.fetchStateDependencies(stateName);
           }
         }
       });
   }
 
-  angular.module('common.routes.<%= camelCaseState %>', [])
+  angular.module('common.routes.<%= camelCaseState %>', [
+    'common.services.lazyLoad',
+    'common.services.session'
+  ])
     .config(config);
 })();
